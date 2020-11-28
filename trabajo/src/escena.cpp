@@ -204,7 +204,7 @@ Escena2::Escena2()
    objetos.push_back( new MallaPLY("../recursos/plys/big_dodge.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/ant.ply") );
    objetos.push_back( new MallaRevolPLY("../recursos/plys/peon.ply", 200) );
-   objetos.push_back(new MallaPLY("../PLY/walman.ply"));
+   objetos.push_back(new MallaPLY("./plys/walman.ply"));
    objetos.push_back(new Cilindro(20,20));
    objetos.push_back(new Cono(30,20));
    objetos.push_back(new Esfera(20,20));
