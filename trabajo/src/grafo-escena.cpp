@@ -1,3 +1,5 @@
+// Nombre:Alejandro Apellidos:Borrego Megías DNI/pasaporte:26504975M (DDGG IG curso 20-21)
+
 // *********************************************************************
 // **
 // ** Gestión de una grafo de escena (implementación)

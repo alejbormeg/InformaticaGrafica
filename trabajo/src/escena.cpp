@@ -1,3 +1,4 @@
+// Nombre:Alejandro Apellidos:Borrego Megías DNI/pasaporte:26504975M (DDGG IG curso 20-21)
 
 
 #include "ig-aux.h"
@@ -11,6 +12,7 @@
 #include "materiales-luces.h"
 #include "seleccion.h"
 #include "modelo-jer.h"
+
 
 
 
@@ -171,6 +173,11 @@ Escena1::Escena1()
 {
    using namespace std ;
    cout << "Creando objetos de escena 1 .... " << flush ;
+   // COMPLETAR: Práctica 1: creación del resto objetos de la práctica 1
+   // Añadir objetos al vector 'objetos', con:
+   //objetos.push_back( new .... )
+   // .........
+
 
    // añadir el objeto 'Cubo' a la lista de objetos de esta escena:
    objetos.push_back( new Cubo() );
@@ -178,11 +185,7 @@ Escena1::Escena1()
    objetos.push_back(new CuboColores());
 
 
-   // COMPLETAR: Práctica 1: creación del resto objetos de la práctica 1
-   // Añadir objetos al vector 'objetos', con:
-   //objetos.push_back( new .... )
-   // .........
-
+   
 
    cout << "hecho." << endl << flush ;
 }
@@ -201,6 +204,7 @@ Escena2::Escena2()
    objetos.push_back( new MallaPLY("../recursos/plys/big_dodge.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/ant.ply") );
    objetos.push_back( new MallaRevolPLY("../recursos/plys/peon.ply", 200) );
+   objetos.push_back(new MallaPLY("../PLY/walman.ply"));
    objetos.push_back(new Cilindro(20,20));
    objetos.push_back(new Cono(30,20));
    objetos.push_back(new Esfera(20,20));
@@ -220,8 +224,6 @@ Escena3::Escena3(){
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    // añadir objetos de esta escena
-   //objetos.push_back(new CilindroParam(30,30,180.0));
-   objetos.push_back(new Propulsor);
    objetos.push_back(new C);
 
    cout << "hecho." << endl << flush ; 

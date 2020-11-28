@@ -192,15 +192,33 @@ camara.h
 escena.h
 ../../../trabajo/include/escena.h
 
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/modelo-jer.cpp
-modelo-jer.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/modelo-jer.h
+../../../trabajo/include/seleccion.h
+objeto3d.h
+../../../trabajo/include/objeto3d.h
+practicas.h
+../../../trabajo/include/practicas.h
+escena.h
+../../../trabajo/include/escena.h
+
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp
+ig-aux.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/ig-aux.h
+escena.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.h
+objeto3d.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/objeto3d.h
 malla-ind.h
 /home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.h
 malla-revol.h
 /home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-revol.h
-matrices-tr.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/matrices-tr.h
-cmath
--
+practicas.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/practicas.h
+camara.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/camara.h
+materiales-luces.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/materiales-luces.h
+seleccion.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/seleccion.h
+modelo-jer.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/modelo-jer.h
 

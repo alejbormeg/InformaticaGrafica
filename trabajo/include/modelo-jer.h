@@ -1,7 +1,4 @@
-/*
-Autor: Alejandro Borrego Megías
-Descripción: Modelo jerárquico de la práctica 3
-*/
+// Nombre:Alejandro Apellidos:Borrego Megías DNI/pasaporte:26504975M (DDGG IG curso 20-21)
 
 #ifndef MODELO_JER_H
 #define MODELO_JER_H

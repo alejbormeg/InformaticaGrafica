@@ -1,10 +1,11 @@
+// Nombre:Alejandro Apellidos:Borrego Megías DNI/pasaporte:26504975M (DDGG IG curso 20-21)
+
 // *********************************************************************
 // **
 // ** Informática Gráfica - curso 2020-21
 // ** Declaración de funciones de animación
 // **
 // *********************************************************************
-
 #ifndef ANIMACION_H
 #define ANIMACION_H
 
