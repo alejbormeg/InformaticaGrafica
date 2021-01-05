@@ -28,6 +28,39 @@ void MallaRevol::inicializar
    const unsigned               num_copias  // número de copias del perfil
 )
 {
+
+   std::vector<Tupla3f> norAristas;
+   Tupla3f normal, auxiliar;
+
+   for (int i=0; i<perfil.size()-1; i++){
+      auxiliar=(perfil[i+1]-perfil[i]); //vector dirección
+      normal(0)=auxiliar(1);
+      normal(1)=-auxiliar(0);
+      normal(2)=0;
+      if(normal.lengthSq()>0){
+         norAristas.push_back(normal.normalized());
+      }
+      else
+      {
+         norAristas.push_back(normal);
+      }
+      
+   }
+
+   nor_ver.insert(nor_ver.begin(), perfil.size(),{0.0,0.0,0.0});
+   if (norAristas[0].lengthSq()>0){
+      nor_ver[0]=norAristas[0];
+   }
+
+   for (int i=1; 1<perfil.size()-1; i++){
+      nor_ver[i]=norAristas[i]+norAristas[i-1];
+      if (nor_ver[i].lengthSq()>0)
+         nor_ver[i]=nor_ver[i].normalized();
+   }
+
+   if (norAristas[perfil.size()-2].lengthSq()>0){
+      nor_ver[perfil.size()-1]=norAristas[perfil.size()-2];
+   }
    // COMPLETAR: Práctica 2: completar: creación de la malla....
    
    Tupla3f vertice_rotado;
@@ -50,6 +83,8 @@ void MallaRevol::inicializar
          triangulos.push_back({k,k+m+1,k+1});
       }
    }
+
+
 
 
 

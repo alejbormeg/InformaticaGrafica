@@ -100,6 +100,50 @@ class NodoGrafoEscena : public Objeto3D
 
 } ;
 
+class GrafoCubos: public NodoGrafoEscena{
+   public:
+      GrafoCubos();
+};
+
+class CuboRejillas: public NodoGrafoEscena{
+   public:
+      CuboRejillas();
+};
+
+class Pared: public NodoGrafoEscena{
+   public:
+      Pared();
+};
+
+class Techo:public NodoGrafoEscena{
+   public:
+      Techo();
+};
+
+class Trasera:public NodoGrafoEscena{
+   public:
+      Trasera();
+};
+
+class Fachada:public NodoGrafoEscena{
+   public:
+      Fachada();
+};
+class CuboEjeX:public NodoGrafoEscena{
+   public:
+      CuboEjeX();
+};
+class CuboEjeY:public NodoGrafoEscena{
+   public:
+      CuboEjeY();
+};
+class CuboEjeZ:public NodoGrafoEscena{
+   public:
+      CuboEjeZ();
+};
+
+
+
 #endif // GRAFO_ESCENA_HPP
 
 // *********************************************************************

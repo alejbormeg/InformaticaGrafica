@@ -23,7 +23,7 @@
 #include "ig-aux.h"
 #include "matrices-tr.h"
 #include "grafo-escena.h"
-
+#include "malla-ind.h"
 using namespace std ;
 
 // *********************************************************************
@@ -86,6 +86,8 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    //guardar modelview actual
       cv.cauce_act->pushMM();
 
+   Material * material_pre = cv.iluminacion ? cv.material_act : nullptr;
+
    //recorrer todas las entradas del array que hay en el nodo
    for (unsigned i=0; i<entradas.size(); i++)
       switch( entradas[i].tipo) { 
@@ -95,7 +97,20 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
          case TipoEntNGE::transformacion : // entrada transf.:
             cv.cauce_act->compMM( *(entradas[i].matriz)); // componer matriz
             break ;  
+         
+         case TipoEntNGE::material : // si la entrada es de tipo ’material’
+            if ( cv.iluminacion ) // y si está activada la iluminación
+            { 
+               cv.material_act = entradas[i].material ; // registrar material
+               cv.material_act->activar( *cv.cauce_act); // activar material
+            }
+            break ;
       }
+
+   if ( material_pre != nullptr  ){
+      cv.material_act = material_pre ;
+      cv.material_act->activar( *cv.cauce_act );
+   }
    // restaura modelview guardada
    cv.cauce_act->popMM() ;
    
@@ -104,9 +119,6 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
    //   1. guardar puntero al material activo al inicio (está en cv.material_act)
    //   2. si una entrada des de tipo material, activarlo y actualizar 'cv.material_act'
    //   3. al finalizar, restaurar el material activo al inicio (si es distinto del actual)
-
-
-
 }
 
 
@@ -219,4 +231,53 @@ bool NodoGrafoEscena::buscarObjeto
 
    // ni este nodo ni ningún hijo es el buscado: terminar
    return false ;
+}
+
+
+CuboRejillas::CuboRejillas(){
+   agregar(new Fachada());
+   agregar(new Trasera());
+   agregar(new RejillaY(5,5));
+   agregar(new Techo());
+   agregar(new Pared());
+   agregar(MAT_Traslacion(1.0,0.0,0.0));
+   agregar(new Pared());
+   agregar(MAT_Ident());
+   
+   //agregar(new RejillaY(5,5));
+   //agregar(new RejillaY(5,5));
+}
+
+Pared::Pared(){
+   agregar(MAT_Rotacion(90,0.0,0.0,1.0));
+   agregar(new RejillaY(5,5));
+}
+
+Techo::Techo(){
+   agregar(MAT_Traslacion(0.0,1.0,0.0));
+   agregar(new RejillaY(5,5));
+}
+
+Trasera::Trasera(){
+   agregar(MAT_Rotacion(90,0.0,1.0,0.0));
+   agregar(new Pared());
+}
+Fachada::Fachada(){
+   agregar(MAT_Traslacion(0.0,0.0,1.0));
+   agregar(new Trasera());
+}
+
+GrafoCubos::GrafoCubos(){
+   agregar(new CuboEjeX);
+   agregar(MAT_Traslacion(-0.5,-0.5,-0.5));
+   agregar(new CuboRejillas());
+}
+
+CuboEjeX::CuboEjeX(){  //Habría que hacer lo mismo con el eje y y z
+   agregar(MAT_Escalado(1.5,1.0,1.0));
+   agregar(MAT_Escalado(0.5,0.5,0.5));
+   agregar(MAT_Traslacion(-2.0,0.0,0.0));
+   agregar(new Cubo());
+   agregar(MAT_Traslacion(4.0,0.0,0.0));
+   agregar(new Cubo());
 }

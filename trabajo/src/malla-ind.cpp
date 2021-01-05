@@ -51,7 +51,23 @@ void MallaInd::calcularNormalesTriangulos()
    // COMPLETAR: Práctica 4: creación de la tabla de normales de triángulos
    // ....
 
+   Tupla3f p,q,r,a,b, n_c;
+   for(unsigned int i = 0; i<triangulos.size(); i++){
+      p = vertices[triangulos[i](0)];
+      q = vertices[triangulos[i](1)];
+      r = vertices[triangulos[i](2)];
+
+      a = q-p;
+      b = r-p;
+
+      n_c = a.cross(b);
+      if(n_c.lengthSq()>0)
+         nor_tri.push_back(n_c.normalized());
+      else
+         nor_tri.push_back({0,0,0});  
+   }
 }
+
 
 
 // -----------------------------------------------------------------------------
@@ -61,10 +77,21 @@ void MallaInd::calcularNormales()
 {
    // COMPLETAR: en la práctica 4: calculo de las normales de la malla
    // se debe invocar en primer lugar 'calcularNormalesTriangulos'
-   // .......
+   calcularNormalesTriangulos();
+   nor_ver.insert(nor_ver.begin(), vertices.size(), {0.0, 0.0, 0.0});
 
+   for(int i = 0; i<triangulos.size(); i++){ //Recorremos las caras
+      nor_ver[triangulos[i](0)]=nor_ver[triangulos[i](0)]+nor_tri[i];
+      nor_ver[triangulos[i](1)]=nor_ver[triangulos[i](1)]+nor_tri[i];
+      nor_ver[triangulos[i](2)]=nor_ver[triangulos[i](2)]+nor_tri[i];
+   }
 
+   for(int i = 0; i<vertices.size(); i++){
+      if(nor_ver[i].lengthSq()>0)
+         nor_ver[i]=nor_ver[i].normalized();
+   }
 }
+
 
 
 
@@ -155,7 +182,7 @@ MallaPLY::MallaPLY( const std::string & nombre_arch )
 
    // COMPLETAR: práctica 4: invocar  a 'calcularNormales' para el cálculo de normales
    // .................
-
+   calcularNormales();
 
 
 }
@@ -191,6 +218,8 @@ Cubo::Cubo()
          {1,5,7}, {1,7,3}  // Z+ (+1)
       } ;
 
+   calcularNormales();
+
 }
 // -----------------------------------------------------------------------------------------------
 
@@ -211,6 +240,7 @@ Tetraedro::Tetraedro()
       {  {0,1,2},{0,1,3},{0,2,3},{1,2,3}
       } ;
 
+   calcularNormales();
    ponerColor({0.0,+0.255,+0.6});
 
 }
@@ -282,4 +312,74 @@ Piramide_sinPico:: Piramide_sinPico() :MallaInd  ("Piramide sin pico")
          {0,6,4}, {0,2,6}, // Z-
          {1,5,7}, {1,7,3}  // Z+ (+1)
       } ;
+}
+
+CasaZ:: CasaZ(){
+vertices =
+      {  { 0.0, 0.0, 0.0 }, // 0
+         { 0.0, 0.0, 1.0 }, // 1
+         { 0.0, +0.5, 0.0 }, // 2
+         { 0.0, +0.5, +1.0 }, // 3
+         { +0.5, 0.0, 0.0 }, // 4
+         { +0.5, 0.0, +1.0 }, // 5
+         { +0.5, +0.5, 0.0 }, // 6
+         { +0.5, +0.5, +1.0 }, // 7
+         {0.25, 1.0, 1.0}, //8
+         {0.25, 1.0, 0.0}  //9
+      } ;
+
+
+
+   triangulos =
+      {  {0,1,3}, {0,3,2}, // X-
+         {4,7,5}, {4,6,7}, // X+ (+4)
+
+         //{0,5,1}, {0,4,5}, // Y-
+         //{2,3,7}, {2,7,6}, // Y+ (+2)
+         {3,8,7}, {2,6,9},
+         {7,8,6}, {6,9,8},
+         {3,8,2}, {2,8,9},
+
+         {0,6,4}, {0,2,6}, // Z-
+         {1,5,7}, {1,7,3}  // Z+ (+1)
+      } ;
+
+   col_ver=
+   {  
+         { 0.0, 0.0, 0.0 }, // 0
+         { 0.0, 0.0, 1.0 }, // 1
+         { 0.0, +0.5, 0.0 }, // 2
+         { 0.0, +0.5, +1.0 }, // 3
+         { +0.5, 0.0, 0.0 }, // 4
+         { +0.5, 0.0, +1.0 }, // 5
+         { +0.5, +0.5, 0.0 }, // 6
+         { +0.5, +0.5, +1.0 }, // 7
+         {0.25, 1.0, 1.0}, //8
+         {0.25, 1.0, 0.0}  //9
+   } ;  
+}
+
+RejillaY ::RejillaY(const unsigned m, const unsigned n){
+   assert(m>1 && n>1);
+
+   double ancho=1.0/m;
+   double largo=1.0/n;
+   //vertices.push_back({0,0,0});
+   for ( int i=0; i<= m; i++){
+      for (int j=0; j<=n; j++){
+         vertices.push_back({ancho*i,0.0,largo*j});
+         col_ver.push_back({ancho*i,0.0,largo*j});
+      }
+   }
+
+   for( int i = 0; i< m; i++) {
+      for (int j = 0; j < n; j++){
+
+      int a = j+i*n;
+      int b = j+i*n +n;
+      triangulos.push_back({a,b+1,b});
+      triangulos.push_back({a,a+1,b+1}); 
+      }
+  
+   }
 }

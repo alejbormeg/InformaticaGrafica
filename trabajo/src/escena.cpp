@@ -23,7 +23,8 @@ Escena::Escena()
 {
    // COMPLETAR: Práctica 4: inicializar 'col_fuentes' y 'material_ini'
    // ...
-
+   col_fuentes = new Col2Fuentes();
+   material_ini = new Material(0.1,0.1,0.1,20);
 
    // COMPLETAR: Práctica 5: hacer 'push_back' de varias camaras perspectiva u ortogonales,
    // (sustituir la cámara orbital simple ('CamaraOrbitalSimple') por varias cámaras de 3 modos ('Camara3Modos')
@@ -90,7 +91,12 @@ void Escena::visualizarGL( ContextoVis & cv )
       // * activar la colección de fuentes de la escena
       // * activar el material inicial
       // ....
-
+      cv.cauce_act->fijarEvalMIL(true);
+      col_fuentes->activar(*cauce);
+      if(material_ini!=nullptr){
+         cv.material_act = material_ini;
+         material_ini->activar(*cauce);
+      }
    }
    else // si la iluminación no está activada, deshabilitar MIL y texturas
    {  cauce->fijarEvalMIL( false );
@@ -180,6 +186,7 @@ Escena1::Escena1()
 
 
    // añadir el objeto 'Cubo' a la lista de objetos de esta escena:
+   objetos.push_back(new CasaZ());
    objetos.push_back( new Cubo() );
    objetos.push_back( new Tetraedro());
    objetos.push_back(new CuboColores());
@@ -199,7 +206,7 @@ Escena2::Escena2()
 {
    using namespace std ;
    cout << "Creando objetos de escena 2 .... " << flush ;
-
+   objetos.push_back(new RejillaY(5,6));
    objetos.push_back( new MallaPLY("../recursos/plys/beethoven.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/big_dodge.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/ant.ply") );
@@ -224,6 +231,7 @@ Escena3::Escena3(){
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    // añadir objetos de esta escena
+   objetos.push_back(new GrafoCubos());
    objetos.push_back(new C);
 
    cout << "hecho." << endl << flush ; 
@@ -237,7 +245,16 @@ Escena3::Escena3(){
 // los objetos que se indican en los guiones de las práctica 4
 // .......
 
+Escena4::Escena4(){
+   using namespace std;
+   cout << "Creando objetos de escena 3 .... " << flush ;
 
+   // añadir objetos de esta escena
+   objetos.push_back(new GrafoCubos());
+   objetos.push_back(new C);
+
+   cout << "hecho." << endl << flush ; 
+}
 
 // ----------------------------------------------------------------------
 // COMPLETAR: Práctica 5
