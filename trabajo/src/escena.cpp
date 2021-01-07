@@ -232,7 +232,7 @@ Escena3::Escena3(){
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    // añadir objetos de esta escena
-   objetos.push_back(new GrafoCubos());
+   //objetos.push_back(new GrafoCubos());
    objetos.push_back(new C);
 
    cout << "hecho." << endl << flush ; 
@@ -251,8 +251,8 @@ Escena4::Escena4(){
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    // añadir objetos de esta escena
-   objetos.push_back(new Lata("../recursos/imgs/lata-coke.jpg"));
    objetos.push_back(new LataPeones());
+   objetos.push_back(new NodoCubo24());
    
 
    cout << "hecho." << endl << flush ; 

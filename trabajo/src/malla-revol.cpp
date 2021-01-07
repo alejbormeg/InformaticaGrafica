@@ -22,7 +22,7 @@ using namespace std ;
 
 // Método que crea las tablas de vértices, triángulos, normales y cc.de.tt.
 // a partir de un perfil y el número de copias que queremos de dicho perfil.
-void MallaRevol::inicializar
+void MallaRevol::inicializar 
 (
    const std::vector<Tupla3f> & perfil,     // tabla de vértices del perfil original
    const unsigned               num_copias  // número de copias del perfil
@@ -82,9 +82,12 @@ void MallaRevol::inicializar
       rotacion=MAT_Rotacion((360.0*i)/(num_copias-1), 0.0, 1.0, 0.0);
       for (int j=0; j<m; j++){
          vertice_rotado=rotacion*perfil[j];
-         nor_ver.push_back(rot*nor_ver[j]);
-
+         nor_ver.push_back(rotacion*nor_ver[j]);
+         t_x=(float)i/(num_copias-1);
+         t_y=1.0-t[j];
+         textura={t_x,t_y};
          vertices.push_back(vertice_rotado);
+         cc_tt_ver.push_back(textura);
 
       }
    }
@@ -96,10 +99,6 @@ void MallaRevol::inicializar
          triangulos.push_back({k,k+m+1,k+1});
       }
    }
-
-
-
-
 
 }
 

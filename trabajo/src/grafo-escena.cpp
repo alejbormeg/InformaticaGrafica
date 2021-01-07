@@ -281,3 +281,11 @@ CuboEjeX::CuboEjeX(){  //Habría que hacer lo mismo con el eje y y z
    agregar(MAT_Traslacion(4.0,0.0,0.0));
    agregar(new Cubo());
 }
+
+
+NodoCubo24::NodoCubo24(){
+   Textura * tex = new Textura("../recursos/imgs/window-icon.jpg");
+   agregar( new Material(tex, 0.2, 0.4, 0.4, 20) );
+   agregar(new Cubo24());
+   ponerNombre("Cubo 24 vertices");
+}

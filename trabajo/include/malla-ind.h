@@ -93,12 +93,6 @@ class Cubo : public MallaInd
 
 // --------------------------------------------------------------------
 
-class Cubo24 : public MallaInd
-{
-  public:
-      Cubo24();
-} ;
-
 class Tetraedro : public MallaInd
 {
    public:
@@ -128,4 +122,11 @@ class RejillaY : public MallaInd
    public:
       RejillaY(const unsigned m, const unsigned n);
 };
+
+
+class Cubo24 : public MallaInd{
+   public:
+      Cubo24();
+};
+
 #endif
