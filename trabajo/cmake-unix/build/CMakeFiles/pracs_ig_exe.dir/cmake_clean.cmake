@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/camara.cpp.o"
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o"
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.o"
+  "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o"
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp.o"
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o"
   "CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-revol.cpp.o"

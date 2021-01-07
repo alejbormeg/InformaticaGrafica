@@ -154,7 +154,10 @@ void FGE_PulsarLevantarTecla( GLFWwindow* window, int key, int scancode, int act
       // de luz actual (usar método 'colFuentes' de la escena activa para obtener un puntero), llamar a
       // 'ProcesaTeclaFuenteLuz', si devuelve 'true', forzar revisualizar escena.
       // .....
-
+      ColFuentesLuz * fuentesLuz = escenas[ind_escena_act]->colFuentes();
+      if(ProcesaTeclaFuenteLuz(fuentesLuz, key))
+         revisualizar_escena = true;
+         
       return ; // finalizar la f.g.e, ya que si está la tecla L pulsada no se mira ninguna otra tecla.
    }
 

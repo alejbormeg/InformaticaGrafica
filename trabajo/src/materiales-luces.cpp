@@ -147,8 +147,10 @@ void Material::activar( Cauce & cauce )
 {
    // COMPLETAR: práctica 4: activar un material
    // .....
-   if(textura!=nullptr)
+   if(textura != nullptr) //Tiene textura
       textura->activar(cauce);
+   else
+      cauce.fijarEvalText(false);
    
    cauce.fijarParamsMIL({k_amb,k_amb,k_amb},{k_dif,k_dif,k_dif},{k_pse,k_pse,k_pse},exp_pse);
 }

@@ -28,49 +28,62 @@ void MallaRevol::inicializar
    const unsigned               num_copias  // número de copias del perfil
 )
 {
+ 
+      std::vector<Tupla3f> normalesAristas, vertsAux;
+      Tupla3f normal, aux;
+      for(unsigned i = 0; i<perfil.size()-1; i++){
 
-   std::vector<Tupla3f> norAristas;
-   Tupla3f normal, auxiliar;
+         aux = (perfil[i+1]-perfil[i]);
+         normal(0)=aux(1);
+         normal(1)=-aux(0);
+         normal(2)=0;
+         if(normal.lengthSq()>0)
+            normalesAristas.push_back(normal.normalized());
+         else
+            normalesAristas.push_back(normal);
+         
+      }
 
-   for (int i=0; i<perfil.size()-1; i++){
-      auxiliar=(perfil[i+1]-perfil[i]); //vector dirección
-      normal(0)=auxiliar(1);
-      normal(1)=-auxiliar(0);
-      normal(2)=0;
-      if(normal.lengthSq()>0){
-         norAristas.push_back(normal.normalized());
-      }
-      else
-      {
-         norAristas.push_back(normal);
-      }
+      nor_ver.insert(nor_ver.begin(), perfil.size(), {0.0, 0.0 , 0.0});
+      if(normalesAristas[0].lengthSq()!=0)
+         nor_ver[0]=normalesAristas[0].normalized();
       
-   }
+      for(unsigned i=1; i<perfil.size()-1; i++){
+         nor_ver[i]=normalesAristas[i]+normalesAristas[i-1];
+         if(nor_ver[i].lengthSq()!=0)
+            nor_ver[i]=nor_ver[i].normalized();
+      }
 
-   nor_ver.insert(nor_ver.begin(), perfil.size(),{0.0,0.0,0.0});
-   if (norAristas[0].lengthSq()>0){
-      nor_ver[0]=norAristas[0];
-   }
+      if(normalesAristas[perfil.size()-2].lengthSq()!=0)
+         nor_ver[perfil.size()-1]=normalesAristas[perfil.size()-2];
 
-   for (int i=1; 1<perfil.size()-1; i++){
-      nor_ver[i]=norAristas[i]+norAristas[i-1];
-      if (nor_ver[i].lengthSq()>0)
-         nor_ver[i]=nor_ver[i].normalized();
-   }
 
-   if (norAristas[perfil.size()-2].lengthSq()>0){
-      nor_ver[perfil.size()-1]=norAristas[perfil.size()-2];
+   //Calculamos coordenadas de textura
+   std::vector<float> d, t;
+   float den=0;
+   for(unsigned int i = 0; i<perfil.size()-1; i++){
+      d.push_back(sqrt((perfil[i+1]-perfil[i]).lengthSq()));
+      den += d[i];
    }
+   t.push_back(0);
+   for(unsigned int i = 1; i<perfil.size(); i++)
+      t.push_back(t[i-1]+d[i-1]/den);
+
    // COMPLETAR: Práctica 2: completar: creación de la malla....
    
    Tupla3f vertice_rotado;
    Matriz4f rotacion;
    int k;
    int m=perfil.size();
+   Tupla2f textura;
+   float t_x,t_y;
+
    for (int i=0; i<num_copias; i++){
       rotacion=MAT_Rotacion((360.0*i)/(num_copias-1), 0.0, 1.0, 0.0);
       for (int j=0; j<m; j++){
          vertice_rotado=rotacion*perfil[j];
+         nor_ver.push_back(rot*nor_ver[j]);
+
          vertices.push_back(vertice_rotado);
 
       }

@@ -103,6 +103,7 @@ CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Pr
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/camara.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/escena.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/grafo-escena.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/latapeones.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/malla-ind.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/malla-revol.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp.o: ../../../trabajo/include/materiales-luces.h
@@ -130,6 +131,27 @@ CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Pr
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.o: ../../../trabajo/include/objeto3d.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.o: ../../../trabajo/include/practicas.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.o: /home/alejandro/Escritorio/4º\ DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp
+
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/cauce.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/fbo.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/ig-aux.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/lector-jpg.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/matrices-tr.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/matrizg.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/matrizg_impl.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/tuplasg.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../recursos/include/tuplasg_impl.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/array-verts.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/camara.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/escena.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/grafo-escena.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/latapeones.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/malla-ind.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/malla-revol.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/materiales-luces.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/objeto3d.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: ../../../trabajo/include/practicas.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o: /home/alejandro/Escritorio/4º\ DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp
 
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp.o: ../../../recursos/include/cauce.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp.o: ../../../recursos/include/fbo.h

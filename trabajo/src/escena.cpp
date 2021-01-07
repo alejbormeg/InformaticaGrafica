@@ -12,8 +12,7 @@
 #include "materiales-luces.h"
 #include "seleccion.h"
 #include "modelo-jer.h"
-
-
+#include "latapeones.h"
 
 
 
@@ -112,7 +111,8 @@ void Escena::visualizarGL( ContextoVis & cv )
    objeto->visualizarGL(cv);
 
 
-
+   if ( cv.visualizar_normales && !cv.modo_seleccion )
+      visualizarNormales( cv );
    // si hay un FBO, dibujarlo (opcional...)
 
 
@@ -186,7 +186,7 @@ Escena1::Escena1()
 
 
    // añadir el objeto 'Cubo' a la lista de objetos de esta escena:
-   objetos.push_back(new CasaZ());
+   //objetos.push_back(new CasaZ());
    objetos.push_back( new Cubo() );
    objetos.push_back( new Tetraedro());
    objetos.push_back(new CuboColores());
@@ -206,17 +206,18 @@ Escena2::Escena2()
 {
    using namespace std ;
    cout << "Creando objetos de escena 2 .... " << flush ;
-   objetos.push_back(new RejillaY(5,6));
    objetos.push_back( new MallaPLY("../recursos/plys/beethoven.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/big_dodge.ply") );
    objetos.push_back( new MallaPLY("../recursos/plys/ant.ply") );
    objetos.push_back( new MallaRevolPLY("../recursos/plys/peon.ply", 200) );
    objetos.push_back(new MallaPLY("./plys/walman.ply"));
+   
    objetos.push_back(new Cilindro(20,20));
    objetos.push_back(new Cono(30,20));
    objetos.push_back(new Esfera(20,20));
    objetos.push_back(new SemiEsfera(20,20));
    objetos.push_back(new SemiCono(20,20,5));
+   
    cout << "hecho." << endl << flush ;
 }
 
@@ -250,12 +251,39 @@ Escena4::Escena4(){
    cout << "Creando objetos de escena 3 .... " << flush ;
 
    // añadir objetos de esta escena
-   objetos.push_back(new GrafoCubos());
-   objetos.push_back(new C);
+   objetos.push_back(new Lata("../recursos/imgs/lata-coke.jpg"));
+   objetos.push_back(new LataPeones());
+   
 
    cout << "hecho." << endl << flush ; 
 }
 
+
+void Escena::visualizarNormales( ContextoVis & cv )
+{
+   // recuperar el objeto raiz de esta escena y comprobar que está ok.
+   bool ilum_ant = cv.iluminacion ;
+   assert( cv.cauce_act != nullptr );
+   Objeto3D * objeto = objetos[ind_objeto_actual] ; assert( objeto != nullptr );
+
+   // configurar el cauce:
+   cv.cauce_act->fijarEvalMIL( false );
+   cv.cauce_act->fijarEvalText( false );
+   cv.cauce_act->fijarModoSombrPlano( true ); // sombreado plano
+   glLineWidth( 1.5 ); // ancho de líneas (se queda puesto así)
+   glColor4f( 1.0, 0.7, 0.4, 1.0 ); // color de las normales
+
+   // configurar el contexto de visualizacion
+   cv.visualizando_normales = true ;   // hace que MallaInd::visualizarGL visualize las normales.
+   cv.iluminacion           = false ;
+
+   // visualizar objeto actual
+   objetos[ind_objeto_actual]->visualizarGL( cv );
+
+   // restaurar atributos cambiados en el contexto de visualización
+   cv.visualizando_normales = false ;
+   cv.iluminacion = ilum_ant ;
+}
 // ----------------------------------------------------------------------
 // COMPLETAR: Práctica 5
 // Añadir la implementación del constructor de la clase Escena5 para construir

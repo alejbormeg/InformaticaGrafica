@@ -420,6 +420,33 @@ home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-e
 	$(MAKE) -f CMakeFiles/pracs_ig_exe.dir/build.make CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.s
 .PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp.s
 
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.o: home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o
+
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.o
+
+# target to build an object file
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o:
+	$(MAKE) -f CMakeFiles/pracs_ig_exe.dir/build.make CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.o
+
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.i: home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.i
+
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.i
+
+# target to preprocess a source file
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.i:
+	$(MAKE) -f CMakeFiles/pracs_ig_exe.dir/build.make CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.i
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.i
+
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.s: home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.s
+
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.s
+
+# target to generate assembly for a file
+home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.s:
+	$(MAKE) -f CMakeFiles/pracs_ig_exe.dir/build.make CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.s
+.PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp.s
+
 home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.o: home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp.o
 
 .PHONY : home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.o
@@ -651,6 +678,9 @@ help:
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.o"
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.i"
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.s"
+	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.o"
+	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.i"
+	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.s"
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.o"
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.i"
 	@echo "... home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.s"
