@@ -82,12 +82,6 @@ iostream
 jpeglib.h
 -
 
-../../../recursos/include/lector-ply.h
-tuplasg.h
--
-vector
--
-
 ../../../recursos/include/matrices-tr.h
 vector
 -
@@ -122,9 +116,11 @@ tuplasg_impl.h
 
 ../../../recursos/include/tuplasg_impl.h
 
-../../../trabajo/include/array-verts.h
-ig-aux.h
--
+../../../trabajo/include/animacion.h
+objeto3d.h
+../../../trabajo/include/objeto3d.h
+practicas.h
+../../../trabajo/include/practicas.h
 
 ../../../trabajo/include/camara.h
 tuplasg.h
@@ -139,14 +135,6 @@ vector
 -
 practicas.h
 ../../../trabajo/include/practicas.h
-
-../../../trabajo/include/malla-ind.h
-vector
--
-objeto3d.h
-../../../trabajo/include/objeto3d.h
-array-verts.h
-../../../trabajo/include/array-verts.h
 
 ../../../trabajo/include/materiales-luces.h
 vector
@@ -178,13 +166,23 @@ camara.h
 escena.h
 ../../../trabajo/include/escena.h
 
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp
+../../../trabajo/include/seleccion.h
+objeto3d.h
+../../../trabajo/include/objeto3d.h
+practicas.h
+../../../trabajo/include/practicas.h
+escena.h
+../../../trabajo/include/escena.h
+
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp
 ig-aux.h
 /home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/ig-aux.h
-tuplasg.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/tuplasg.h
-malla-ind.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.h
-lector-ply.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/lector-ply.h
+camara.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/camara.h
+practicas.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/practicas.h
+seleccion.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/seleccion.h
+animacion.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/animacion.h
 

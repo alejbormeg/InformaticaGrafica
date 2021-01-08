@@ -45,7 +45,7 @@ PeonMadera :: PeonMadera(){
     agregar(new MallaRevolPLY("../recursos/plys/peon.ply",50));
 
     ponerNombre("Peon de Madera");
-    ponerIdentificador(-1);
+    ponerIdentificador(0);
 }
 
 
@@ -57,7 +57,7 @@ PeonBlanco :: PeonBlanco(){
     agregar(new MallaRevolPLY("../recursos/plys/peon.ply",50));
 
     ponerNombre("Peon Blanco");
-    ponerIdentificador(-1);
+    ponerIdentificador(1);
 }
 
 PeonNegro :: PeonNegro(){
@@ -68,7 +68,7 @@ PeonNegro :: PeonNegro(){
     agregar(new MallaRevolPLY("../recursos/plys/peon.ply",50));
 
     ponerNombre("Peon Negro");
-    ponerIdentificador(-1);
+    ponerIdentificador(2);
 }
 
 LataPeones :: LataPeones(){
@@ -82,4 +82,57 @@ LataPeones :: LataPeones(){
     agregar(new PeonMadera());
 
     ponerNombre("Lata y Peones");
+}
+
+
+LataPepsi :: LataPepsi(){
+    agregar(new Lata("../recursos/imgs/lata-pepsi.jpg"));
+
+    ponerNombre("Lata de Pepsi");
+    ponerIdentificador(3);
+}
+
+LataCocaCola :: LataCocaCola(){
+    agregar(new Lata("../recursos/imgs/lata-coke.jpg"));
+
+    ponerNombre("Lata de Coca-Cola");
+    ponerIdentificador(4);
+}
+
+LataUGR :: LataUGR(){
+    agregar(new Lata("../recursos/imgs/window-icon.jpg"));
+
+    ponerNombre("Lata de la UGR");
+    ponerIdentificador(5);
+}
+
+Latas :: Latas(){
+    agregar(new LataPepsi());
+    agregar(MAT_Traslacion(3.0,0.0,0.0));
+    agregar(new LataCocaCola());
+    agregar(MAT_Traslacion(3.0,0.0,0.0));
+    agregar(new LataUGR());
+
+    ponerIdentificador(0);
+    ponerNombre("Latas");
+}
+
+Peones :: Peones(){
+    agregar(new PeonMadera());
+    agregar(MAT_Traslacion(2.0, 0.0, 0.0));
+    agregar(new PeonBlanco());
+    agregar(MAT_Traslacion(2.0, 0.0, 0.0));
+    agregar(new PeonNegro());
+    ponerIdentificador(0);
+
+    ponerNombre("Peones");
+}
+
+VariasLatasPeones :: VariasLatasPeones(){
+    agregar(new Latas());
+    agregar(MAT_Traslacion(0.0,0.0,3.0));
+    agregar(new Peones());
+
+    ponerIdentificador(0);
+    ponerNombre("Latas y Peones");
 }

@@ -46,7 +46,7 @@ class LataPeones: public NodoGrafoEscena{
     public:
         LataPeones();
 };
-/*
+
 class LataPepsi : public NodoGrafoEscena{
     public:
         LataPepsi();
@@ -76,5 +76,5 @@ class VariasLatasPeones : public NodoGrafoEscena{
     public:
         VariasLatasPeones();
 };
-*/
+
 #endif

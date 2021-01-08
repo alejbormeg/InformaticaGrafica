@@ -248,7 +248,7 @@ Escena3::Escena3(){
 
 Escena4::Escena4(){
    using namespace std;
-   cout << "Creando objetos de escena 3 .... " << flush ;
+   cout << "Creando objetos de escena 4 .... " << flush ;
 
    // añadir objetos de esta escena
    objetos.push_back(new LataPeones());
@@ -290,5 +290,14 @@ void Escena::visualizarNormales( ContextoVis & cv )
 // los objetos que se indican en los guiones de las práctica 5
 // .......
 
+Escena5::Escena5(){
+   using namespace std;
+   cout << "Creando objetos de escena 5.... " << flush ;
 
+   // añadir objetos de esta escena
+   objetos.push_back(new VariasLatasPeones());
+   
+
+   cout << "hecho." << endl << flush ; 
+}
 
