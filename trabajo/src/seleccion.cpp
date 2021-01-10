@@ -63,7 +63,9 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
 
    // 1. Crear (si es necesario) y activar el framebuffer object (fbo) de selección
    // .........
-
+   if(fbo==nullptr){
+      fbo = new Framebuffer(cv_dib.ventana_tam_x, cv_dib.ventana_tam_y);
+   }
 
    // 2. crear un 'ContextoVis' apropiado, en ese objeto:
    //    * activar modo selecion, desactivar iluminación, poner modo relleno
@@ -72,38 +74,66 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    //
    // ..........
 
-
+   ContextoVis * contexto = new ContextoVis();
+   contexto->modo_seleccion = true;
+   contexto->iluminacion = false;
+   contexto->modo_visu = ModosVisu::relleno;
+   contexto->cauce_act = cv_dib.cauce_act;
+   contexto->ventana_tam_x = cv_dib.ventana_tam_x;
+   contexto->ventana_tam_y = cv_dib.ventana_tam_y;
+   FijarColVertsIdent(*contexto->cauce_act,0);
    // 3. Activar fbo, cauce y viewport. Configurar cauce (modo solido relleno, sin ilum.
    //    ni texturas). Limpiar el FBO (color de fondo: 0)
    // .......
+   fbo->activar(contexto->ventana_tam_x,contexto->ventana_tam_y);
+   contexto->cauce_act->activar();
+   glViewport(0,0,contexto->ventana_tam_x,contexto->ventana_tam_y);
+   contexto->cauce_act->fijarEvalMIL(false);
+   glClearColor(0.0,0.0,0.0,1.0);
+   glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
    // 4. Activar la cámara (se debe leer de la escena con 'camaraActual')
    // ....
-
+   CamaraInteractiva * camara = escena->camaraActual();
+   camara->activar(*contexto->cauce_act);
 
    // 5. Visualizar el objeto raiz actual (se debe leer de la escena con 'objetoActual()')
    // ........
-
+   Objeto3D * objeto_raiz = escena->objetoActual();
+   objeto_raiz->visualizarGL(*contexto);
 
    // 6. Leer el color del pixel (usar 'LeerIdentEnPixel')
    // (hay que hacerlo mientras está activado el framebuffer de selección)
    // .....
-
+   int id = LeerIdentEnPixel(x,y);
 
    // 7. Desactivar el framebuffer de selección
    // .....
-
+   fbo->desactivar();
 
    // 8. Si el identificador del pixel es 0, imprimir mensaje y terminar (devolver 'false')
    // ....
-
+   if (id == 0){
+      std::cout << "Ningún objeto seleccionado, identificador en pixel 0" << endl;
+      return false;
+   }
 
    // 9. Buscar el objeto en el objeto_raiz (puede ser un grafo de escena)
    //    e informar del nombre del mismo (si no se encuentra, indicarlo)
    //   (usar 'buscarObjeto')
    // .....
+   Objeto3D * objeto;
+   Tupla3f pos_objeto;
+   if (objeto->buscarObjeto(id, MAT_Ident() ,&objeto, pos_objeto)){
+      camara->mirarHacia(pos_objeto);
+      std::cout << "Objeto con id: " << id << " ,Nombre: " << objeto->leerNombre() << endl;
+   }
 
+   else{
+      std::cout << "No se ha seleccionado nada\n" << endl;
+      return false;
+   }
 
    // al final devolvemos 'true', ya que hemos encontrado un objeto
    return true ;

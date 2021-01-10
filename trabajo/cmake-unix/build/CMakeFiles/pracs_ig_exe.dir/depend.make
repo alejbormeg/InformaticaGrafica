@@ -188,6 +188,7 @@ CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Pr
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/materiales-luces.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/objeto3d.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/practicas.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/seleccion.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: /home/alejandro/Escritorio/4º\ DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp
 
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-revol.cpp.o: ../../../recursos/include/cauce.h
