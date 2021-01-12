@@ -24,7 +24,11 @@ void FijarColVertsIdent( Cauce & cauce, const int ident )  // 0 ≤ ident < 2^24
 {
    // COMPLETAR: práctica 5: fijar color actual de OpenGL usando 'ident' (glColor3ub)
    // .....
-
+   const unsigned char
+      byteR = (ident) % 0x100U,  //rojo = byte menos significativo
+      byteG = (ident / 0x100U) % 0x100U,  // verde = byte intermedio
+      byteB = (ident / 0x1000U) % 0x100U;  // azul = byte más significativo
+   glColor3ub(byteR, byteG, byteB);  // cambio de color en OpenGL.
 }
 
 // ----------------------------------------------------------------------------------
@@ -36,8 +40,13 @@ int LeerIdentEnPixel( int xpix, int ypix )
    // COMPLETAR: práctica 5: leer el identificador codificado en el color del pixel (x,y)
    // .....(sustituir el 'return 0' por lo que corresponda)
    // .....
+   unsigned char bytes[3];
 
-   return 0 ;
+   //Leemos los 3 bytes del frame-buffer
+   glReadPixels(xpix, ypix, 1, 1, GL_RGB, GL_UNSIGNED_BYTE, (void *)bytes);
+
+   //Reconstruimos el identificador
+   return bytes[0] + (0x100U * bytes[1]) + (0x10000U * bytes[2]);
 
 }
 
@@ -107,7 +116,7 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    // (hay que hacerlo mientras está activado el framebuffer de selección)
    // .....
    int id = LeerIdentEnPixel(x,y);
-
+   std::cout << "HOLAAAAAAAAAA" << endl;
    // 7. Desactivar el framebuffer de selección
    // .....
    fbo->desactivar();
@@ -125,7 +134,7 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    // .....
    Objeto3D * objeto;
    Tupla3f pos_objeto;
-   if (objeto->buscarObjeto(id, MAT_Ident() ,&objeto, pos_objeto)){
+   if (objeto_raiz->buscarObjeto(id, MAT_Ident() ,&objeto, pos_objeto)){
       camara->mirarHacia(pos_objeto);
       std::cout << "Objeto con id: " << id << " ,Nombre: " << objeto->leerNombre() << endl;
    }

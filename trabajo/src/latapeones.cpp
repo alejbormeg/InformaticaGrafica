@@ -45,7 +45,7 @@ PeonMadera :: PeonMadera(){
     agregar(new MallaRevolPLY("../recursos/plys/peon.ply",50));
 
     ponerNombre("Peon de Madera");
-    ponerIdentificador(0);
+    ponerIdentificador(10);
 }
 
 
@@ -113,7 +113,6 @@ Latas :: Latas(){
     agregar(MAT_Traslacion(3.0,0.0,0.0));
     agregar(new LataUGR());
 
-    ponerIdentificador(0);
     ponerNombre("Latas");
 }
 
@@ -133,6 +132,5 @@ VariasLatasPeones :: VariasLatasPeones(){
     agregar(MAT_Traslacion(0.0,0.0,3.0));
     agregar(new Peones());
 
-    ponerIdentificador(0);
     ponerNombre("Latas y Peones");
 }

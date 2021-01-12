@@ -88,18 +88,22 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
 
    Material * material_pre = cv.iluminacion ? cv.material_act : nullptr;
 
+   const Tupla4f color_previo = leerFijarColVertsCauce( cv );
+
    //recorrer todas las entradas del array que hay en el nodo
    for (unsigned i=0; i<entradas.size(); i++)
       switch( entradas[i].tipo) { 
          case TipoEntNGE::objeto : // entrada objeto:
             entradas[i].objeto->visualizarGL( cv ); // visualizar objeto
             break ;
+
+
          case TipoEntNGE::transformacion : // entrada transf.:
             cv.cauce_act->compMM( *(entradas[i].matriz)); // componer matriz
             break ;  
          
          case TipoEntNGE::material : // si la entrada es de tipo ’material’
-            if ( cv.iluminacion ) // y si está activada la iluminación
+            if ( cv.iluminacion && !cv.modo_seleccion) // y si está activada la iluminación
             { 
                cv.material_act = entradas[i].material ; // registrar material
                cv.material_act->activar( *cv.cauce_act); // activar material
@@ -107,12 +111,14 @@ void NodoGrafoEscena::visualizarGL( ContextoVis & cv )
             break ;
       }
 
+
+   glColor4fv( color_previo );
    if ( material_pre != nullptr  ){
       cv.material_act = material_pre ;
       cv.material_act->activar( *cv.cauce_act );
    }
    // restaura modelview guardada
-   cv.cauce_act->popMM() ;
+   cv.cauce_act->popMM();
    
    // COMPLETAR: práctica 4: en la práctica 4, si 'cv.iluminacion' es 'true',
    // se deben de gestionar los materiales:
@@ -198,7 +204,23 @@ void NodoGrafoEscena::calcularCentroOC()
    //    en coordenadas de objeto (hay que hacerlo recursivamente)
    //   (si el centro ya ha sido calculado, no volver a hacerlo)
    // ........
-
+   if (centro_calculado==false){
+      Matriz4f mat = MAT_Ident();
+      Tupla3f centro_promedio = {0,0,0};
+      float num_centros = 0;
+      for (unsigned i=0; i<entradas.size(); i++){
+         if ( entradas[i].tipo == TipoEntNGE::objeto){
+           entradas[i].objeto->calcularCentroOC();
+           centro_promedio = centro_promedio + mat*leerCentroOC();
+           num_centros++;
+         }
+         else if (entradas[i].tipo == TipoEntNGE::transformacion)
+            mat = mat * (*entradas[i].matriz) ;
+      }
+      centro_promedio = centro_promedio / num_centros;
+      ponerCentroOC(centro_promedio);
+   }
+   centro_calculado = true;
 }
 // -----------------------------------------------------------------------------
 // método para buscar un objeto con un identificador y devolver un puntero al mismo
@@ -218,16 +240,31 @@ bool NodoGrafoEscena::buscarObjeto
 
    // 1. calcula el centro del objeto, (solo la primera vez)
    // ........
-
+   calcularCentroOC();
 
    // 2. si el identificador del nodo es el que se busca, ya está (terminar)
    // ........
-
+   if(ident_busc == leerIdentificador()){
+      centro_wc = mmodelado*leerCentroOC();
+      if ( objeto == nullptr ) {
+        cout << "\t Identificador encontrado con puntero asociado nulo" << endl;
+      }
+      *objeto = this ;
+      return true;
+   }
 
    // 3. El nodo no es el buscado: buscar recursivamente en los hijos
    //    (si alguna llamada para un sub-árbol lo encuentra, terminar y devolver 'true')
    // ........
+   Matriz4f mat = mmodelado;
 
+   bool encontrado = false;
+   for (unsigned i=0; i<entradas.size() && !encontrado; i++) {
+      if ( entradas[i].tipo == TipoEntNGE::objeto) 
+         encontrado =  entradas[i].objeto->buscarObjeto(ident_busc, mat, objeto, centro_wc );
+      else if (entradas[i].tipo == TipoEntNGE::transformacion)
+         mat = mat * (*entradas[i].matriz) ;
+   }
 
    // ni este nodo ni ningún hijo es el buscado: terminar
    return false ;
