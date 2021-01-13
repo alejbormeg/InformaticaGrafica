@@ -146,6 +146,7 @@ bool Objeto3D::buscarObjeto
       centro_wc = mmodelado*leerCentroOC();
       if ( objeto != nullptr )
          *objeto = this ;
+   
       return true ;
    }
    else

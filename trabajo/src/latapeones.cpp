@@ -112,7 +112,7 @@ Latas :: Latas(){
     agregar(new LataCocaCola());
     agregar(MAT_Traslacion(3.0,0.0,0.0));
     agregar(new LataUGR());
-
+    ponerIdentificador(0);
     ponerNombre("Latas");
 }
 
@@ -131,6 +131,5 @@ VariasLatasPeones :: VariasLatasPeones(){
     agregar(new Latas());
     agregar(MAT_Traslacion(0.0,0.0,3.0));
     agregar(new Peones());
-
     ponerNombre("Latas y Peones");
 }

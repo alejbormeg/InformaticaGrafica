@@ -142,12 +142,6 @@ objeto3d.h
 materiales-luces.h
 ../../../trabajo/include/materiales-luces.h
 
-../../../trabajo/include/latapeones.h
-objeto3d.h
-../../../trabajo/include/objeto3d.h
-grafo-escena.h
-../../../trabajo/include/grafo-escena.h
-
 ../../../trabajo/include/malla-ind.h
 vector
 -
@@ -155,14 +149,6 @@ objeto3d.h
 ../../../trabajo/include/objeto3d.h
 array-verts.h
 ../../../trabajo/include/array-verts.h
-
-../../../trabajo/include/malla-revol.h
-vector
--
-string
--
-malla-ind.h
-../../../trabajo/include/malla-ind.h
 
 ../../../trabajo/include/materiales-luces.h
 vector
@@ -194,13 +180,13 @@ camara.h
 escena.h
 ../../../trabajo/include/escena.h
 
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.cpp
-malla-ind.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.h
-malla-revol.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-revol.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.cpp
+ig-aux.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/ig-aux.h
 matrices-tr.h
 /home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/matrices-tr.h
-latapeones.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.h
+grafo-escena.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/grafo-escena.h
+malla-ind.h
+/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.h
 

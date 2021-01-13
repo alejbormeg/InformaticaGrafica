@@ -116,7 +116,6 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    // (hay que hacerlo mientras está activado el framebuffer de selección)
    // .....
    int id = LeerIdentEnPixel(x,y);
-   std::cout << "HOLAAAAAAAAAA" << endl;
    // 7. Desactivar el framebuffer de selección
    // .....
    fbo->desactivar();
@@ -132,6 +131,7 @@ bool Seleccion( int x, int y, Escena * escena, ContextoVis & cv_dib )
    //    e informar del nombre del mismo (si no se encuentra, indicarlo)
    //   (usar 'buscarObjeto')
    // .....
+   std::cout << "Identificador= " << id << "  Id del objeto=" << objeto_raiz->leerIdentificador() << endl;
    Objeto3D * objeto;
    Tupla3f pos_objeto;
    if (objeto_raiz->buscarObjeto(id, MAT_Ident() ,&objeto, pos_objeto)){
