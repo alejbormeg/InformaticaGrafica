@@ -38,7 +38,6 @@ Textura::Textura( const std::string & nombreArchivoJPG )
    // .....
    imagen=LeerArchivoJPEG(nombreArchivoJPG.c_str(),ancho,alto);
 
-   //Leer y entender diapositiva 144
 }
 
 // ---------------------------------------------------------------------
@@ -234,7 +233,6 @@ void ColFuentesLuz::activar( Cauce & cauce )
     }
 
     cauce.fijarFuentesLuz(colores,pos_dir);
-    //Revisar este método 
 }
 
 // ---------------------------------------------------------------------

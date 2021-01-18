@@ -144,29 +144,28 @@ void MallaInd::visualizarGL( ContextoVis & cv )
    //     'fijarColores', 'fijarCoordText' y 'fijarNormales', como corresponda.
    if (array_verts == nullptr){
       array_verts= new ArrayVertices(GL_FLOAT,3,vertices.size(),vertices.data());
-   }
-   
-   array_verts->fijarIndices(GL_UNSIGNED_INT,3*triangulos.size(),triangulos.data());
    
 
-   //Practica 5
+      array_verts->fijarIndices(GL_UNSIGNED_INT,3*triangulos.size(),triangulos.data());
 
-   if(cv.modo_seleccion){
-      int id=leerIdentificador();
-      if ( id!=-1)
-         FijarColVertsIdent(*cv.cauce_act, id);
-     
-   }
-   else{
-      if(!col_ver.empty())
-         array_verts->fijarColores(GL_FLOAT,3,col_ver.data());
+      //Practica 5
+      if(cv.modo_seleccion){
+         int id=leerIdentificador();
+         if ( id!=-1)
+            FijarColVertsIdent(*cv.cauce_act, id);
       
-      if(!cc_tt_ver.empty())
-         array_verts->fijarCoordText(GL_FLOAT,2,cc_tt_ver.data());
+      }
+      else{
+         if(!col_ver.empty())
+            array_verts->fijarColores(GL_FLOAT,3,col_ver.data());
+         
+         if(!cc_tt_ver.empty())
+            array_verts->fijarCoordText(GL_FLOAT,2,cc_tt_ver.data());
 
-      if(!nor_ver.empty())
-         array_verts->fijarNormales(GL_FLOAT, nor_ver.data());
+         if(!nor_ver.empty())
+            array_verts->fijarNormales(GL_FLOAT, nor_ver.data());
 
+      }
    }
 
 
