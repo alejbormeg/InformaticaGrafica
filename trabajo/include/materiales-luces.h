@@ -250,5 +250,11 @@ class Col2Fuentes : public ColFuentesLuz
       Col2Fuentes() ;
 } ;
 
+class TexPeon : public Textura
+{
+   public:
+    TexPeon(const std::string & nombreArchivoJPG);
+};
+
 
 #endif

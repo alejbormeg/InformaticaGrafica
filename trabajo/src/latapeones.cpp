@@ -38,7 +38,7 @@ Lata :: Lata(const std::string & textura){
 }
 
 PeonMadera :: PeonMadera(){
-    Textura * tex = new Textura("../recursos/imgs/text-madera.jpg");
+    TexPeon * tex = new TexPeon("../recursos/imgs/text-madera.jpg");
     agregar( MAT_Escalado(0.8, 0.8, 0.8) );
     agregar( MAT_Traslacion(0.0,1.35,0.0));
     agregar( new Material(tex, 0.2, 0.4, 0.4, 20) );
