@@ -121,4 +121,10 @@ class Escena5 : public Escena
    public:
       Escena5() ;
 } ;
+
+class EscenaPruebas : public Escena
+{
+   public:
+      EscenaPruebas() ;
+} ;
 #endif // ESCENA_H

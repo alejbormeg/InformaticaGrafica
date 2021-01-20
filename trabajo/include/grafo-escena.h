@@ -148,6 +148,12 @@ class NodoCubo24 : public NodoGrafoEscena{
       NodoCubo24();
 };
 
+class CuboUgr : public NodoGrafoEscena{
+
+   public:
+      CuboUgr();
+};
+
 
 #endif // GRAFO_ESCENA_HPP
 

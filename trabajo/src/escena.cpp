@@ -306,3 +306,14 @@ Escena5::Escena5(){
    cout << "hecho." << endl << flush ; 
 }
 
+EscenaPruebas::EscenaPruebas(){
+    using namespace std;
+   cout << "Creando objetos de escena prueba.... " << flush ;
+
+   // añadir objetos de esta escena
+   objetos.push_back(new CuboUgr());
+   
+
+   cout << "hecho." << endl << flush ; 
+}
+

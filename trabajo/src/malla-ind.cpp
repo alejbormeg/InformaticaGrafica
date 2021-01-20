@@ -13,7 +13,7 @@
 #include "malla-ind.h"   // declaración de 'ContextoVis'
 #include "lector-ply.h"
 #include "seleccion.h"
-
+#include "grafo-escena.h"
 // *****************************************************************************
 // funciones auxiliares
 
@@ -194,6 +194,7 @@ void MallaInd::visualizarGL( ContextoVis & cv )
    // restaurar el color previamente fijado
    glColor4fv( color_previo );
 }
+
 
 
 
@@ -482,4 +483,50 @@ Cubo24 :: Cubo24(){
      
    };
    calcularNormales();
+}
+
+MallaCil::MallaCil(const int n){
+
+
+	for(int i=0; i<=n; i++){
+
+      const float f=float(i)/float(n),
+      ang=2.0*M_PI*f,
+      vx=std::cos(ang),
+      vz=std::sin(ang);
+
+      //Vertice 3*i(lateral del cilindro,inferior)
+      vertices.push_back({vx,0.0,vz});
+	   nor_ver.push_back({vx,0.0,vz});      
+      cc_tt_ver.push_back({f,1.0});
+      //Vertice 3*i+1(lateral del cilindro,superior)
+      vertices.push_back({vx,1.0,vz});
+      nor_ver.push_back({vx,0.0,vz});
+      cc_tt_ver.push_back({f,0.0});
+
+      //vertice 3*i+2(tapa, es el anterior vertice duplicado)
+      vertices.push_back({vx,1.0,vz});
+      nor_ver.push_back({0.0,1.0,0.0});
+      cc_tt_ver.push_back({0.5+0.5*vz,0.5+0.5*vx});
+
+
+      //triangulos
+      if(i<n){
+         triangulos.push_back({3*i,3*i+1,3*(i+1)});
+         triangulos.push_back({3*(i+1),3*i+1,3*(i+1)+1});
+         triangulos.push_back({3*i+2,3*(n+1),3*(i+1)+2});
+      }
+   }
+	//vertice 3*(n+1)(centro de la tapa superior)
+	vertices.push_back({0.0,1.0,0.0});
+   nor_ver.push_back({0.0,1.0,0.0});
+   cc_tt_ver.push_back({0.5,0.5});
+
+}
+
+CuboUgr::CuboUgr(){
+   Textura * tex = new Textura("../recursos/imgs/window-icon.jpg");
+   agregar( new Material(tex, 0.2, 0.4, 0.4, 20) );
+   agregar(new MallaCil(20));
+   ponerNombre("Cubo 24 vertices");
 }

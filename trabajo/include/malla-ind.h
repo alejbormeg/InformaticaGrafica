@@ -129,4 +129,9 @@ class Cubo24 : public MallaInd{
       Cubo24();
 };
 
+
+class MallaCil : public MallaInd{
+   public:
+      MallaCil(int n);
+};
 #endif
