@@ -301,6 +301,8 @@ Escena5::Escena5(){
 
    // añadir objetos de esta escena
    objetos.push_back(new VariasLatasPeones());
+   objetos.push_back(new Invocacion(5));
+
    
 
    cout << "hecho." << endl << flush ; 
@@ -311,6 +313,7 @@ EscenaPruebas::EscenaPruebas(){
    cout << "Creando objetos de escena prueba.... " << flush ;
 
    // añadir objetos de esta escena
+   objetos.push_back(new Invocacion(5));
    objetos.push_back(new CuboUgr());
    
 

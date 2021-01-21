@@ -185,6 +185,7 @@ CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Pr
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/camara.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/escena.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/grafo-escena.h
+CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/latapeones.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/malla-ind.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/materiales-luces.h
 CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp.o: ../../../trabajo/include/objeto3d.h

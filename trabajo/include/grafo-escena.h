@@ -154,6 +154,12 @@ class CuboUgr : public NodoGrafoEscena{
       CuboUgr();
 };
 
+class Invocacion : public NodoGrafoEscena{
+
+   public:
+      Invocacion(int n);
+};
+
 
 #endif // GRAFO_ESCENA_HPP
 

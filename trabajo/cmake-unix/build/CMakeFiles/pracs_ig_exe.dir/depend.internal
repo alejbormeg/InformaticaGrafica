@@ -186,6 +186,7 @@ CMakeFiles/pracs_ig_exe.dir/home/alejandro/Escritorio/4º_DGIIM/IG/Prácticas/Pr
  ../../../trabajo/include/camara.h
  ../../../trabajo/include/escena.h
  ../../../trabajo/include/grafo-escena.h
+ ../../../trabajo/include/latapeones.h
  ../../../trabajo/include/malla-ind.h
  ../../../trabajo/include/materiales-luces.h
  ../../../trabajo/include/objeto3d.h

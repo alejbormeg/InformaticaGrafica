@@ -14,6 +14,7 @@
 #include "lector-ply.h"
 #include "seleccion.h"
 #include "grafo-escena.h"
+#include "latapeones.h"
 // *****************************************************************************
 // funciones auxiliares
 
@@ -529,4 +530,19 @@ CuboUgr::CuboUgr(){
    agregar( new Material(tex, 0.2, 0.4, 0.4, 20) );
    agregar(new MallaCil(20));
    ponerNombre("Cubo 24 vertices");
+}
+
+Invocacion::Invocacion(int n){
+   ponerNombre("Invocacion");
+   agregar(new VariasLatasPeones());
+
+   agregar(MAT_Traslacion(n*2,0,0));
+   for (int i=0; i<n; i++){
+      const float angulo=i*2.0*M_PI/float(n);
+      agregar(MAT_Traslacion(n*cos(angulo),0,n*sin(angulo)));
+      CuboUgr * nodo= new CuboUgr();
+
+      nodo->ponerIdentificador(1000+i);
+      agregar(nodo);
+   }
 }
