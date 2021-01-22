@@ -160,6 +160,12 @@ class Invocacion : public NodoGrafoEscena{
       Invocacion(int n);
 };
 
+class Prueba : public NodoGrafoEscena{
+
+   public:
+      Prueba();
+};
+
 
 #endif // GRAFO_ESCENA_HPP
 

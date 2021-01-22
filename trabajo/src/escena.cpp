@@ -192,6 +192,7 @@ Escena1::Escena1()
 
    // añadir el objeto 'Cubo' a la lista de objetos de esta escena:
    //objetos.push_back(new CasaZ());
+   objetos.push_back(new Prueba());
    objetos.push_back( new Cubo() );
    objetos.push_back( new Tetraedro());
    objetos.push_back(new CuboColores());

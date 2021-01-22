@@ -122,12 +122,6 @@ tuplasg_impl.h
 
 ../../../recursos/include/tuplasg_impl.h
 
-../../../trabajo/include/animacion.h
-objeto3d.h
-../../../trabajo/include/objeto3d.h
-practicas.h
-../../../trabajo/include/practicas.h
-
 ../../../trabajo/include/array-verts.h
 ig-aux.h
 -
@@ -168,14 +162,6 @@ objeto3d.h
 array-verts.h
 ../../../trabajo/include/array-verts.h
 
-../../../trabajo/include/malla-revol.h
-vector
--
-string
--
-malla-ind.h
-../../../trabajo/include/malla-ind.h
-
 ../../../trabajo/include/materiales-luces.h
 vector
 -
@@ -185,10 +171,6 @@ tuplasg.h
 ../../../trabajo/include/tuplasg.h
 lector-jpg.h
 ../../../trabajo/include/lector-jpg.h
-
-../../../trabajo/include/modelo-jer.h
-grafo-escena.h
-../../../trabajo/include/grafo-escena.h
 
 ../../../trabajo/include/objeto3d.h
 string
@@ -217,42 +199,6 @@ practicas.h
 ../../../trabajo/include/practicas.h
 escena.h
 ../../../trabajo/include/escena.h
-
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.cpp
-ig-aux.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/ig-aux.h
-escena.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/escena.h
-objeto3d.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/objeto3d.h
-malla-ind.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.h
-malla-revol.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-revol.h
-practicas.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/practicas.h
-camara.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/camara.h
-materiales-luces.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/materiales-luces.h
-seleccion.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/seleccion.h
-modelo-jer.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/modelo-jer.h
-latapeones.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/latapeones.h
-
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/main.cpp
-ig-aux.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/ig-aux.h
-camara.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/camara.h
-practicas.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/practicas.h
-seleccion.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/seleccion.h
-animacion.h
-/home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/animacion.h
 
 /home/alejandro/Escritorio/4º DGIIM/IG/Prácticas/Prácticas/trabajo/src/malla-ind.cpp
 ig-aux.h
