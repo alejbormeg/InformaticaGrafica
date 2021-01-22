@@ -111,19 +111,6 @@ class Piramide_sinPico : public MallaInd
       Piramide_sinPico();
 };
 
-class CasaZ : public MallaInd
-{
-   public:
-      CasaZ();
-};
-
-class RejillaY : public MallaInd
-{
-   public:
-      RejillaY(const unsigned m, const unsigned n);
-};
-
-
 class Cubo24 : public MallaInd{
    public:
       Cubo24();

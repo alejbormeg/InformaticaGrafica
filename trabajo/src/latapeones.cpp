@@ -1,3 +1,4 @@
+// Nombre:Alejandro Apellidos:Borrego Megías DNI/pasaporte:26504975M (DDGG IG curso 20-21)
 
 #include "malla-ind.h"
 #include "malla-revol.h"
@@ -38,7 +39,7 @@ Lata :: Lata(const std::string & textura){
 }
 
 PeonMadera :: PeonMadera(){
-    TexPeon * tex = new TexPeon("../recursos/imgs/text-madera.jpg");
+    TexPeon * tex = new TexPeon("../recursos/imgs/text-madera.jpg"); //Usamos la clase TexPeon creada
     agregar( MAT_Escalado(0.8, 0.8, 0.8) );
     agregar( MAT_Traslacion(0.0,1.35,0.0));
     agregar( new Material(tex, 0.2, 0.4, 0.4, 20) );
